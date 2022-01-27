@@ -28,9 +28,9 @@
     $.get("/Test/GetClientList", null, DataBind);
     function DataBind(ClientList) {
         $('#mytable tr:not(:first)').remove();
-        var SetData = $("#SetClientList");
+      var SetData = $("#SetClientList");
         var table = document.getElementById("mytable");
-      
+
         for (var i = 0; i <= ClientList.length; i++) {
             var currentRow = table.rows[i];
             var createClickHandler = function (row) {
@@ -38,20 +38,11 @@
                     var cell = row.getElementsByTagName("td")[1];
                     var id = cell.textContent;
                     alert("id:" + id);
-                    var f = {};
-                    f.url = '@Url.Action("GetClientList","ClientChart")';
-                    f.type = "POST";
-                    f.dataType = "json";
-                    f.data = JSON.stringify({ GuidInCome: id });
-                    f.contentType = "application/json";
-                    f.success = function (response) {
-                       // alert("successed");
-                        window.location.pathname = "ClientChart/ClientChartActRes";
-                    };
-                    f.fail = function (response) {
-                        alert("failed");
-                    };
-                    $.ajax(f);
+
+                    
+                     var url = '@Url.Action("ClientChartActRes", "ClientChart", new { id = "__id__" })';
+                    window.location.pathname = url.replace('__id__', id);
+
                 };
             };
             currentRow.onclick = createClickHandler(currentRow);
@@ -60,11 +51,11 @@
                 "<td>" + i + "</td>" +
                 "<td>" + ClientList[i].Guid + "</td>" +
                 "<td>" + date + "</td>" +
-                
+
                 "</tr>";
             SetData.append(Data);
             $("#LoadingStatus").html(" ");
-
+            console.log(JSON.stringify(ClientList));
         }
     }
     $(document).ready(function () {

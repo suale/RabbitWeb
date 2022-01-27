@@ -26,7 +26,7 @@ namespace RabbitWeb.Controllers
         {
            
             List<Table2> gidecek = new List<Table2>();
-            List<ClientDateStr> gidecek2 = new List<ClientDateStr>();
+            //List<ClientDateStr> gidecek2 = new List<ClientDateStr>();
             var model = db.Table2.ToList();
             foreach (var item in model)
             {

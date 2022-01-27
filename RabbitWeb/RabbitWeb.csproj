@@ -125,6 +125,8 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Chart.css" />
+    <Content Include="Content\Chart.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\Entities2\RabbitMQDBEntities.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -189,6 +191,8 @@
       <DependentUpon>Entities3.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.6.0.intellisense.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\jquery-3.6.0.js" />
     <Content Include="Scripts\jquery-3.6.0.min.js" />
     <Content Include="Scripts\jquery-3.6.0.slim.js" />
@@ -202,6 +206,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ClientChart.cs" />
     <Compile Include="Models\ClientDateStr.cs" />
     <Compile Include="Models\Entities2\RabbitMQDBEntities.Context.cs">
       <AutoGen>True</AutoGen>
